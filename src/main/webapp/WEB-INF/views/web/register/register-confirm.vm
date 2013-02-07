@@ -1,0 +1,26 @@
+#set($title = "情歌网-汇聚全球情感")
+
+<link href="#springUrl('')/themes/bootstrap/css/passport.css" media="screen" rel="stylesheet" type="text/css" >	
+<div id="main">
+    <div id="wrap">
+      <div class="register">
+        <h1 class="tit_2"><img src="/images/tit_reg.gif" title="个人用户注册" alt="个人用户注册" />个人用户注册</h1>
+        <!-- register info -->
+        <div class="reg_info">
+          <ul class="reg_step">
+            <li class="suc"><span class="step_1">填写注册信息</span></li>
+            <li class="select"><span class="step_2">通过邮件确认</span></li>
+            <li><span class="step_3">注册成功</span></li>
+          </ul>
+          <div class="reg_info_con">
+            <ul class="confirm">
+              <li class="send">确认信已经成功发送到你的邮箱<span class="cue">$email</span>了<br />查看收件箱...点击确认信中的链接地址，就可以完成注册了！</li>
+              <li class="ques">如果你很长时间还没有收到情歌的确认信，请... <br />确认邮件是否被你提供的邮箱系统自动拦截，或被误认为垃圾邮件放到垃圾箱了<br />如果你确认邮箱地址正确，可以请求<a href="#springUrl('')/web/register/resendActive/$uuid">再次发送确认信</a><br />如果还不能解决你的问题，可以发邮件给情歌管理员寻求帮助：webmaster<img src='/images/email.gif' alt="Email" />lovesong.com</li>
+            </ul>
+          </div>
+        </div>
+	  </div>
+    </div>
+</div>
+	
+	

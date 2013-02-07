@@ -1,0 +1,11 @@
+#set($title = "情歌网-汇聚全球情感")
+<body>
+
+
+<div class="ui-layout-west" id="left">
+	-------------------首页啦啦啦啦-----------
+	<h1>提示信息：$message</h1>
+	$userName
+	<a href="#springUrl('')/web/$userName/logou" >--退出--</>
+</div>
+</body>

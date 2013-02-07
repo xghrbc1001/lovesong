@@ -1,0 +1,102 @@
+/* This CSS sets the default styles for the main navigation. */
+
+/* ---------- Main navigation ---------- */
+
+.north-toggler{position:absolute; right:18px; top:6px; width:66px; height:44px;z-index:22; display:none; background:url(../images/navigation/hd-toggle.png) no-repeat left top; color:#fff; font-size:15px; text-decoration:none;}
+.north-toggler:hover{ background:url(../images/navigation/hd-toggle-hover.png) no-repeat left top;}
+.north-toggler span{ padding-left:20px; background:url(../images/navigation/toggle-north.png) no-repeat left center; margin-left:10px;}
+
+
+#modules li a {font-size:15px; padding-left:40px; height:31px; display:block; background-color:transparent;}
+#modules li{padding-top:4px; display:block; border-bottom:solid 1px #999; border-top:solid 1px #f6f6f6;  }
+#modules li a span{ line-height:30px; }
+#modules .active{background-color:#fff0b5;}
+#modules .mhover{background-color:#fdf3ca;}
+.ui-layout-west a{ color:#878787; text-decoration:none;}
+
+#modules .s-icon_1{ background-position: 18px 0;   } 
+#modules .s-icon_2{ background-position: 18px -367px;   } 
+#modules .s-icon_3{ background-position: 18px -734px;   } 
+#modules .s-icon_4{ background-position: 18px -1028px;   } 
+
+.msep{border-bottom:solid 1px #bebebe; padding:1px;}
+.msep p { background-color:#fec150; font-size:1px; height:1px; border:solid 1px #ffe086;}
+
+#cmodule{padding:5px 10px; font-size:14px; margin-bottom:5px;}
+
+.mitems{display:none;}
+.mitems li,.mitems a{display:block;}
+.mitems li{padding-left:20px; padding-top:4px;}
+.mitems li a{padding-left:30px; background-position:left center; line-height:26px;}
+.mitems a{height:26px;}
+.mitems .subactive{background-color:#d4d4d4;}
+.mitems .subhover{background-color:#fff;}
+
+
+/*小图标*/
+.icon{background: url(../images/dock/icons/menu/s-icons.png) no-repeat top left;}
+.s-icon_1{ background-position: 0 0;   } 
+.s-icon_1_1{ background-position: 0 -75px;   } 
+.s-icon_1_2{ background-position: 0 -148px;   } 
+.s-icon_1_3{ background-position: 0 -221px;   } 
+.s-icon_1_4{ background-position: 0 -294px;   } 
+.s-icon_2{ background-position: 0 -367px;   } 
+.s-icon_2_1{ background-position: 0 -442px;   } 
+.s-icon_2_2{ background-position: 0 -515px;   } 
+.s-icon_2_3{ background-position: 0 -588px;   } 
+.s-icon_2_4{ background-position: 0 -661px;   } 
+.s-icon_3{ background-position: 0 -734px;   } 
+.s-icon_3_1{ background-position: 0 -809px;   } 
+.s-icon_3_2{ background-position: 0 -882px;   } 
+.s-icon_3_3{ background-position: 0 -955px;   } 
+.s-icon_4{ background-position: 0 -1028px;   } 
+.s-icon_4_1{ background-position: 0 -1103px;   } 
+.s-icon_4_2{ background-position: 0 -1176px;   } 
+.s-icon_4_3{ background-position: 0 -1249px;   } 
+.s-icon_4_4{ background-position: 0 -1322px;   } 
+.ediicon{padding-left:26px;}
+.iconsubBtnIconAdd{background: url(../images/dock/icons/menu/subBtnIconAdd.png) no-repeat left center;}
+.iconsubBtnIconDelete{background: url(../images/dock/icons/menu/subBtnIconDelete.png) no-repeat left center;}
+.iconsubBtnIconHed{background: url(../images/dock/icons/menu/subBtnIconHed.png) no-repeat left center;}
+.iconsubBtnIconRework{background: url(../images/dock/icons/menu/subBtnIconRework.png) no-repeat left center; text-decoration:none; }
+.iconsubBtnIconSave{background: url(../images/dock/icons/menu/subBtnIconSave.png) no-repeat left center;}
+.iconsubBtnIconStart{background: url(../images/dock/icons/menu/subBtnIconStart.png) no-repeat left center;}
+.icontableIconAdd{background: url(../images/dock/icons/menu/tableIconAdd.png) no-repeat left center; text-decoration:none;}
+.icontableIconHed{background: url(../images/dock/icons/menu/tableIconHed.png) no-repeat left center; text-decoration:none;}
+.icontableIconDelete{background: url(../images/dock/icons/menu/tableIconDelete.png) no-repeat left center; text-decoration:none; }
+.icontableIconSearch{background: url(../images/dock/icons/menu/tableIconSearch.png) no-repeat left center; text-decoration:none; }
+
+.icontableIconRework{background: url(../images/dock/icons/menu/tableIconRework.png) no-repeat left center; text-decoration:none; }
+.icontableIconStop{background: url(../images/dock/icons/menu/tableIconStop.png) no-repeat left center; text-decoration:none; }
+.icontableIconStart{background: url(../images/dock/icons/menu/tableIconStart.png) no-repeat left center; text-decoration:none; }
+.iicon{padding-left:50px;}
+.iiconmenuIcon_0{background: url(../images/dock/icons/menu/menuIcon_0.png) no-repeat 10px center;}
+.iiconmenuIcon_1{background: url(../images/dock/icons/menu/menuIcon_1.png) no-repeat 10px center;}
+.iiconmenuIcon_2{background: url(../images/dock/icons/menu/menuIcon_2.png) no-repeat 10px center;}
+.iiconmenuIcon_3{background: url(../images/dock/icons/menu/menuIcon_3.png) no-repeat 10px center;}
+.iiconmenuIcon_4{background: url(../images/dock/icons/menu/menuIcon_4.png) no-repeat 10px center;}
+.iiconmenuIcon_5{background: url(../images/dock/icons/menu/menuIcon_5.png) no-repeat 10px center;}
+
+.iiconmenuIcon_1_1{background: url(../images/dock/icons/menu/menuIcon_1_1.png) no-repeat 10px center;}
+.iiconmenuIcon_1_2{background: url(../images/dock/icons/menu/menuIcon_1_2.png) no-repeat 10px center;}
+.iiconmenuIcon_1_3{background: url(../images/dock/icons/menu/menuIcon_1_3.png) no-repeat 10px center;}
+
+.iiconmenuIcon_2_1{background: url(../images/dock/icons/menu/menuIcon_2_1.png) no-repeat 10px center;}
+.iiconmenuIcon_2_2{background: url(../images/dock/icons/menu/menuIcon_2_2.png) no-repeat 10px center;}
+.iiconmenuIcon_2_3{background: url(../images/dock/icons/menu/menuIcon_2_3.png) no-repeat 10px center;}
+.iiconmenuIcon_2_4{background: url(../images/dock/icons/menu/menuIcon_2_4.png) no-repeat 10px center;}
+.iiconmenuIcon_2_5{background: url(../images/dock/icons/menu/menuIcon_2_5.png) no-repeat 10px center;}
+
+.iiconmenuIcon_3_1{background: url(../images/dock/icons/menu/menuIcon_3_1.png) no-repeat 10px center;}
+.iiconmenuIcon_3_2{background: url(../images/dock/icons/menu/menuIcon_3_2.png) no-repeat 10px center;}
+.iiconmenuIcon_3_3{background: url(../images/dock/icons/menu/menuIcon_3_3.png) no-repeat 10px center;}
+
+.iiconmenuIcon_4_1{background: url(../images/dock/icons/menu/menuIcon_4_1.png) no-repeat 10px center;}
+.iiconmenuIcon_4_2{background: url(../images/dock/icons/menu/menuIcon_4_2.png) no-repeat 10px center;}
+
+.iiconmenuIcon_5_1{background: url(../images/dock/icons/menu/menuIcon_5_1.png) no-repeat 10px center;}
+.iiconmenuIcon_5_2{background: url(../images/dock/icons/menu/menuIcon_5_2.png) no-repeat 10px center;}
+
+
+
+/*  右侧菜单栏 */

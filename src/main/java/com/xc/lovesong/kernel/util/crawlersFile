@@ -1,0 +1,36 @@
+免费试用网：
+DHC：http://cha.dhc.net.cn/top/index.jsp
+纯沁肌语网：http://www.puretier.com/
+极肤网：http://www.jissbon-skyn.com
+搜狐女人：http://try.women.sohu.com/
+Yoka网：http://try.yoka.com/
+凤凰网：http://try.cosmetics.ifeng.com/now.html
+育儿网：http://shiyong.ci123.com/
+新浪育儿网：http://product.baby.sina.com.cn
+快乐购：http://www.happigo.com
+红孩子女人网：http://try.redmama.com.cn
+
+
+
+<product>
+	<title>{$title}</title>
+	<siteurl>{$siteurl}</siteurl>
+	<img>{$img}</img>
+	<imgHref>{$img}</imgHref>
+	<quantity></quantity>
+	<price>0</price>
+	<barginPrice></barginPrice>
+	<standard></standard>
+	<efficacy></efficacy>
+	<startTime> </startTime>
+	<endTime> </endTime>
+	<Suitable></Suitable>
+	<description></description>
+	<remark>{$remark}</remark>
+	<merchantId></merchantId>
+	<priority>11</priority>
+	<tags>,0,1,</tags>
+	<auto>1</auto
+	
+</product>
+									

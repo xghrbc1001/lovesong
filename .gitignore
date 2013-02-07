@@ -1,6 +1,18 @@
 *.class
+target/
 
 # Package Files #
 *.jar
 *.war
 *.ear
+*.log
+
+# eclipse project files #
+.project
+.classpath
+.settings
+
+# security files #
+*.properties
+
+

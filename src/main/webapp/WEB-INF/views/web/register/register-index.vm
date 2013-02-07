@@ -1,0 +1,75 @@
+#set($title = "情歌网-汇聚全球情感")
+<!-- document.<portlet:namespace/>createfm.submit(); -->
+<script type="text/javascript" src="#springUrl('')/themes/bootstrap/js/business/register/registerAdd.js" ></script>
+<link href="#springUrl('')/themes/bootstrap/css/passport.css" media="screen" rel="stylesheet" type="text/css" >	
+
+<div id="main">
+<div id="wrap">
+  <div class="register">
+    <h1 class="tit_2"><img src="#springUrl('')/images/custom/register/tit_reg.gif" title="个人用户注册" alt="个人用户注册" />个人用户注册</h1>
+    <!-- register info -->
+    <div class="reg_info">
+      <ul class="reg_step">
+        <li class="select"><span class="step_1">填写注册信息</span></li>
+        <li><span class="step_2">通过邮件确认</span></li>
+        <li><span class="step_3">注册成功</span></li>
+      </ul>
+      <div class="reg_info_con">
+        <form action="#springUrl('')/web/register/action" id="signup_form" method="post">
+		   <div style="margin:0;padding:0;display:inline">
+			<input name="authenticity_token" type="hidden" value="fLfytow5POLRfCcXLWWv7qSFSJV+ez4NJ7cRhg2mG7E=" />
+		   </div>
+           <table border="0" cellspacing="0" cellpadding="0" class="table_2">
+            <colgroup><col width="85" /><col /></colgroup>
+            <tr>
+              <th valign="top"><span class="must">*</span>邮件地址:</th>
+              <td>
+				<input class="input_1 required validate-email validate-ajax-/users/validate_email" id="email" name="email" placeholder="邮箱名" size="30" type="text" />
+              </td>
+            </tr>
+            <tr>
+              <th valign="top"><span class="must">*</span>密码:</th>
+              <td>
+				<input class="required min-length-6 max-length-20 validate-ajax-/users/validate_password input_1" id="password" name="password" placeholder="6-20个字符" size="30" type="password" />
+                <p>请选用安全的密码，不允许使用只包含纯数字，纯大写或者小写字母的密码</p>
+			  </td>
+            </tr>
+            <tr>
+              <th><span class="must">*</span>确认密码:</th>
+              <td>
+				<input class="required equals-user_password input_1" id="confirmPassword" name="confirmPassword" size="30" type="password" />
+			  </td>
+            </tr>
+            <tr>
+              <th>性别:</th>
+              <td>
+					<input name="gender" id="genderM" type="radio" value="男" checked="true">男
+					<input name="gender" id="genderF" type="radio" value="女" >女
+				</select>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="must">*</span>验证码:</th>
+              <td>
+                <input class="input_3 required" id="user_captcha" name="user[captcha]" size="30" type="text" value="" />
+				<input id="user_captcha_key" name="user[captcha_key]" type="hidden" value="58dab73111edea5ffe28e9f3e230738983e66803" />
+				<span><img alt="Simple_captcha?distortion=high&amp;image_style=simply_blue&amp;simple_captcha_key=58dab73111edea5ffe28e9f3e230738983e66803&amp;time=1360073110" src="http://www.iteye.com/simple_captcha/simple_captcha?distortion=high&amp;image_style=simply_blue&amp;simple_captcha_key=58dab73111edea5ffe28e9f3e230738983e66803&amp;time=1360073110" /></span>
+              </td>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <td><input name="checkbox" type="checkbox" id="auto" checked="checked" />
+				我已经阅读并同意
+                <a href="/topic/29434" target="_blank">注册条款</a></td>
+            </tr>
+          </table>
+          <div class="btn_area_1"><input type="submit" name="button" id="button" value="注　册" class="btn_1" /></div>
+        </form>
+      </div>
+    </div>	
+  </div>
+	
+  </div>	
+</div>
+	
+	

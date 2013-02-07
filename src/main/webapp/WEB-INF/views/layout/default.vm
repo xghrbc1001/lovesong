@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+#parse("/common/header.vm")
+ <body>
+<style type="text/css">
+    .divCv1 { display: table; overflow: hidden; *position:relative;}
+    .divCv2 { vertical-align: middle; display: table-cell; *position:absolute;*top:50%;}
+    .divCv3 { *position:relative;*top:-50%;left:-50%;}
+    #loading-mask_main
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20000000;
+        background-color: #fff;
+        /*filter: alpha(opacity=90);
+       opacity: 0.9;*/
+    }
+    #loading_main
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width:100%;
+        height:100%;
+        text-align: center;
+        padding: 0;
+        z-index: 20000001;
+        color: #555;
+        font: bold 12px tahoma,arial,helvetica;
+    }
+    #loading_main img
+    {
+        margin-bottom: 5px;
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+    }
+</style>
+<!--loading遮罩层-->
+<div id="loading-mask_main">
+    &#160;
+</div>
+<div id="loading_main">
+    <div style="width:100%;height:100%;" class="divCv1">
+        <div class="divCv2">
+            <div class="divCv3">
+                <img src="#springUrl('')/themes/bootstrap/img/messages/loading.gif")" alt="加载中..." /><span style="margin-left: 2px;">加载中,请稍候...</span>
+            </div>
+        </div>
+    </div>
+</div>
+#parse("/common/navigation.vm")
+$screen_content
+#parse("/common/footer.vm")
+<script type="text/javascript">
+    $(function(){
+        //setTimeout(function(){
+            $('#loading_main').remove();   //删除加载loading层
+            $('#loading-mask_main').fadeOut(function(){
+                $(this).remove();
+            });
+        //}, 100);
+    });
+</script>
+ </body>
+</html>

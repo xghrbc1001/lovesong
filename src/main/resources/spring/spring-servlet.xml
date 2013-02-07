@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="  
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<context:annotation-config />
+	<!-- @Controller, @Service, @Configuration, etc. -->
+	<context:component-scan base-package="net.viralpatel.contact" />
+	<context:component-scan base-package="com.xc.lovesong" />
+	
+   <!-- 加载 配置文件 信息 -->
+   <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:conf/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- Access resource bundles with the specified basename -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames" value="/WEB-INF/i18n/content,/WEB-INF/i18n/validation,/WEB-INF/i18n/asset,/WEB-INF/i18n/enum" />
+		<property name="cacheSeconds" value="5" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+    <!-- velocity 属性配置 -->
+	<bean id="velocityConfig"
+		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="/WEB-INF/views/" />
+		<property name="configLocation" value="classpath:conf/velocity.properties"/>
+	</bean>
+	<!-- velocity 模板配置 -->
+	<bean id="velocityViewResolver"
+		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<property name="layoutUrl" value="layout/default.vm" />
+		<property name="cache" value="false" />
+		<property name="suffix" value=".vm" />
+		<!-- spring的 格式化 工具 -->
+		<property name="dateToolAttribute" value="dateTool" />
+		<property name="numberToolAttribute" value="numberTool" />
+		<!-- 使用spring 中的宏 -->
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<!-- 将请求或会话的属性复制到模型Map -->
+		<property name="exposeRequestAttributes" value="false" />
+		<property name="exposeSessionAttributes" value="false" />
+		<!-- Merge urlBuilderMap to view context for convenience. You can put your tools which must be thread safe. -->
+		<!-- <property name="attributesMap" ref="_urlBuilderMap" /> -->
+		<property name="contentType" value="text/html;charset=UTF-8" />
+	</bean>
+	<!-- velocity 视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultContentType" value="text/html" />
+		<!-- not by accept header -->
+		<property name="ignoreAcceptHeader" value="true"/>
+		<!-- by extension -->
+		<property name="mediaTypes">
+			<map>
+			    <entry key="xml" value="application/xml" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+                <ref bean="velocityViewResolver"/>
+			</list>
+		</property>
+  		<property name="defaultViews">
+			<list>
+				<!-- for application/json -->
+                <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Support json ResponseBody -->
+	<bean class=" org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />  
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
+        <property name="messageConverters">  
+            <list>  
+                <ref bean="mappingJacksonHttpMessageConverter" />  
+                <!--
+                <bean id="utf8StringHttpMessageConverter" 
+                	  class="net.viralpatel.contact.util.UTF8StringHttpMessageConverter" />
+                -->
+            </list>
+        </property>
+    </bean>
+    <!-- static resources -->
+    <mvc:default-servlet-handler />
+	<mvc:resources location="/static/" mapping="/static/**" 
+				   cache-period="864000"/> <!-- 24 * 3600 * 10 -->
+	<mvc:resources location="/themes/" mapping="/themes/**" 
+				   cache-period="864000"/> <!-- 24 * 3600 * 10 -->			   
+	<mvc:resources location="/plugins/" mapping="/plugins/**" 
+				   cache-period="864000"/> <!-- 24 * 3600 * 10 -->			   
+	<!-- url mapping with interceptor -->
+	<!--
+	<mvc:interceptors>  
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/*"/>
+            <mvc:mapping path="/index/*"/>
+            <bean class="com.web.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+	-->
+	
+	<!-- 全局异常配置 start -->    
+     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">    
+         <property name="exceptionMappings">    
+             <props>    
+                 <prop key="java.lang.Exception">errors/error</prop>    
+                 <prop key="java.lang.Throwable">errors/err</prop>    
+             </props>    
+         </property>    
+         <property name="statusCodes">    
+             <props>    
+                 <prop key="errors/error">500</prop>
+                 <prop key="errors/404">404</prop>
+             </props>    
+         </property>    
+         <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->    
+         <property name="warnLogCategory" value="WARN"></property>    
+         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->    
+         <property name="defaultErrorView" value="errors/uncaught"></property>    
+         <!-- 默认HTTP状态码 -->    
+         <property name="defaultStatusCode" value="500"></property>    
+     </bean>    
+     <!-- 全局异常配置 end -->
+	
+	
+    <bean id="dataSource"
+        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+    	<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="url" value="${jdbc.databaseurl}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+<!-- 	<bean id="sessionFactory" -->
+<!-- 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"> -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<!--
+		<property name="annotatedClasses">
+			<list>
+				<value>net.viralpatel.contact.form.Contact</value>
+				<value>com.xc.taosku.home.app.resource.domain.ResourceBean</value>
+				<value>net.viralpatel.contact.form.ModelAndView</value>
+			</list>
+		</property>
+		-->
+		<!-- 加载所在的包 的实体类-->
+		<property name="packagesToScan">
+			<list>
+				<value>com.abc.core.bo</value>
+				<value>com.abc.auditing.bo</value>
+			</list>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 属性值可为validate | update | create | create-drop -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Enables the Spring MVC @Controller programming model --> 
+	<tx:annotation-driven />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

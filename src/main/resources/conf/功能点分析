@@ -1,0 +1,51 @@
+
+--考虑到直接访问URL 形式，需要做总线拦截器
+
+
+
+1：门户管理类：
+	admin portlet: 显示 应用版本信息、企业信息(组织机构名称，地址等)、有效的portlets、当前活动的session、
+	认证属性、LDAP配置等
+	enterprise admin portlet: 允许授权用户管理用户、组织机构、场所、群组、角色、权限等
+	Page Settings: 管理页面、URL、修改页面外观、主题、样式等
+
+2：内容管理类：
+	内容编辑器
+	内容存储管理器管理文档资料
+	显示检索社区内文章，发布文章
+	显示当前页面的父页面，做导航用
+	提供门户页面结构的配置和:览	
+
+
+
+3：协同类
+	blogs: 提供博客功能，即有分类和所见即所得的编辑功能
+	Calender: 显示日历信息，用户可以建立和管理和检索事件
+    Messageing: 提供用户即时聊天的客户端
+    Mail: 邮件客户端，适用于任何电邮服务器
+    message boards : 论坛功能
+    wiki 
+	
+4：社区类
+	announcements: 提供公告功能
+	bookmarks: 提供收藏夹功能
+	communities: 建立和管理新的门户社区和社区的用户群
+	directory: 注册用户信息列表
+	polis : 提供投票功能
+	
+
+
+5：个人工具类
+	financial tools : 金融财务计算功能
+	google portlets: 提供谷歌搜索功能
+	news and RSS : 动态获取互联网新闻
+	weather: 通过互联网动态获取并显示城市的天气情况
+	other tools : 包括模拟钟表、美国区号查询、词典、语言选择、密码生成器、信息检索、单位换算等
+	
+
+6：开发工具类
+	WSRP : 提供访问其他网站的的链接
+	workflow: 管理工作流
+
+
+

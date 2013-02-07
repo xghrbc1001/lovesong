@@ -1,0 +1,61 @@
+#set($title = "资源管理")
+
+
+<script type="text/javascript">
+    var fjConfig = {
+        rootPath: "#springUrl('')/static/js/fj/",
+        themeStoreName: "fj_theme",
+        ver: "20120730" + new Date().getTime()//,
+        //initTheme: "gray"
+    };
+</script>
+
+<script type="text/javascript" src="#springUrl('')/themes/shamrock/javascript/ui/jquery.ztree-2.6.min.js" ></script>
+<link rel="stylesheet" href="#springUrl('')/themes/shamrock/css/ui/zTreeIcons.css" />
+<link rel="stylesheet" href="#springUrl('')/themes/shamrock/css/ui/zTreeStyle.css" />
+
+<script type="text/javascript" src="#springUrl('')/themes/shamrock/javascript/business/home/app/resourceIndex.js" ></script>
+<link rel="stylesheet" href="#springUrl('')/themes/shamrock/css/contentpages.css" />
+
+<style type="text/css">
+    body { margin-bottom: 5px; }
+    fieldset{padding:10px;margin:10px;width:95%;color:#333;border:#0285CD dashed 1px;-moz-border-radius:8px;}
+</style>
+<script type="text/javascript" src="#springUrl('')/static/js/fj/pkgs/fj.all.min.js" ></script>
+
+<div class="wrap">
+<div class="right row" >
+    <div id="eastPanel">
+        <div id="eastPanel1">
+            <input id="btnEast1" no="1" class="btnEast btnEast1_down pngfix" type="button" value="" />
+        </div>
+        <div id="eastPanel2">
+            <div id="eastPanelBg1"></div>
+            <div id="eastPanelBg2">
+                <ul>
+                 ##   #if($!filterMenu.filterButton($resourceTreeButtonMap,"resouceTree_add"))
+                        <li><a href="javascript:addRessourceFn()"style="color:#086D9C;">添加资源</a></li>
+                 ##   #end
+                 ##   #if($!filterMenu.filterButton($resourceTreeButtonMap,"resouceTree_update"))
+                       <li><a href="javascript:updateRessourceFn()"style="color:#086D9C;">修改资源</a></li>
+                 ##   #end
+                  ##  #if($!filterMenu.filterButton($resourceTreeButtonMap,"resouceTree_delete"))
+                        <li><a href="javascript:deleteRessourceFn()"style="color:#086D9C;">删除资源</a></li>
+                 ##   #end
+                </ul>
+            </div>
+            <div id="eastPanelBg3"></div>
+        </div>
+    </div>
+</div>
+
+<div class="center" style="overflow-y: auto;height: 100%;">
+    <fieldset>
+        <div>
+            <ul id="trees" class="tree" style="width:300px; overflow:auto;"></ul>
+        </div>
+
+    </fieldset>
+</div>
+
+</div>

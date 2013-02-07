@@ -1,0 +1,31 @@
+#set($title = "情歌网-汇聚全球情感")
+
+<link href="#springUrl('')/themes/bootstrap/css/passport.css" media="screen" rel="stylesheet" type="text/css" >	
+
+<div id="main">
+    <div id="wrap">
+      <div class="register">
+        <h1 class="tit_2"><img src="/images/tit_reg.gif" title="个人用户注册" alt="个人用户注册" />个人用户注册</h1>
+        <!-- register info -->
+        <div class="reg_info">
+          <ul class="reg_step">
+            <li class="suc"><span class="step_1">填写注册信息</span></li>
+            <li class="suc"><span class="step_2">通过邮件确认</span></li>
+            <li class="select"><span class="step_3">注册成功</span></li>
+          </ul>
+          <div class="reg_info_con">
+            <dl class="congratulation">
+              <dt>恭喜您!您已经成为情歌网站会员.您马上可以开始使用您的帐号<a href="#springUrl('')/web/index">点击登录</a></dd>
+              <dd>1.新用户注册成功之后,您可以修改个人资料和阅读站内短信.当注册满一天以后,您将拥有全部权限,包括在论坛发帖、发表博客、发送站内短信等等.</dd>
+              <dd>2.在您使用情歌网站之前,务必仔细阅读<a href="http://www.iteye.com/wiki/JavaEye/1308-javaeye-forum-rules" target="_blank">情歌网站使用规则</a>，并且严格遵守，避免发生不必要的误会.</dd>
+              <dd>3.您有任何问题,可以写信给管理员webmaster<img src='/images/email.gif' alt="Email" />lovesong.com,寻求帮助.</dd>
+              <dd>4.进入<a href="#springUrl('')/web/index">情歌首页</a></dd>
+              <dd>期待着您和情歌网一同成长!</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+	
+	

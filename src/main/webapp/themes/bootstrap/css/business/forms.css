@@ -1,0 +1,112 @@
+/* This CSS sets the default styles for forms. */
+
+#hdlogo{ position:absolute; top:10px ; left:20px;height:37px; width:255px; z-index:11; background:url(../images/navigation/logo.png) no-repeat left top;}
+#hdcontext{ position:absolute; top:10px ;left:250px;height:25px; width:300px; z-index:11; color:#E0AE64; font-weight:normal; font-size:15px;}
+#loading{position:absolute; bottom:5px ; right:320px;padding:3px; border:solid 1px #000; background-color:#fff; font-size:11px; display:none; }
+.hd-right{position:absolute;  right:0px; height:52px; width:190px;}
+.hd-right .line{width:2px;}
+.hd-right a,.hd-right b,.hd-right span{float:left; display:block;height:52px; line-height:52px;}
+.hd-right a{color:#fff; font-weight:bold; font-size:15px; text-decoration:none; }
+.hd-right span{margin:0px 20px; _margin-left:10px; font-weight:normal;}
+.hd-right a:hover{ background:url(../images/navigation/hdm-hover-bg.png) no-repeat center bottom;}
+.hd-right a:hover .line{  background:url(../images/navigation/hd-vline.png) no-repeat center center;}
+.hd-right .logout span{padding-left:20px; background:url(../images/navigation/ilogout.png) no-repeat left center;}
+.hd-right .toggle-north span{padding-left:20px; background:url(../images/navigation/toggle-north-on.png) no-repeat left center;}
+
+
+
+/* 列表行样式  */
+.hgrid .odd td{ background-color:#fff;}
+.hgrid .even td{ background-color:#F8F8D3;}
+.hgrid .cbcol{text-align:center;}
+.hgrid .hrow td{ background-color:#f4faff;}
+.hgrid th{background:url(../images/dock/icons/TableTitleBg.jpg) repeat-x left top; padding:2px; font-weight:normal;font-size:12px;}
+.hgrid td{padding:2px;}
+.hgrid td:hover{background: #66ff66;}
+.hgrid .ediicon{padding-left:14px;}
+.hgrid caption{font-size:13px; background-position:4px 5px; padding-left:25px;}
+
+.vgrid,.hgrid{border-color:#c6c6c6;}
+.vgrid th,.vgrid td{ border:solid 1px #c6c6c6 ;border-width:0px 1px 1px 0px; padding:2px;}
+.vgrid th,.hgrid th{color:#666; padding:2px; font-weight:normal;}
+/* 分页标签  */
+.pager{text-align:left;background:url(images/MainPageTitleBg.jpg) repeat-x left bottom;}
+.pager .first{ background: url(../images/forms/arrows/pointer_ll.jpg) no-repeat  0px 0px; }
+.pager .prev{  background: url(../images/forms/arrows/pointer_l.jpg) no-repeat   0px 0px;  }
+.pager .next{ background: url(../images/forms/arrows/pointer_r.jpg) no-repeat   0px 0px; }
+.pager .last{  background: url(../images/forms/arrows/pointer_rr.jpg) no-repeat  0px 0px;  }
+.pager .current:hover{ text-decoration:none;color:#000; }
+.pager .go{ padding-left:42px; padding-top:4px; background: url(../images/forms/arrows/btngo.jpg) no-repeat 0px center;   }
+
+.grid1 caption{ background-image:url(../images/dock/icons/menu/tableIcon1.png);}
+.grid2 caption{ background-image:url(../images/dock/icons/menu/tableIcon2.png);}
+	
+.toggleq{display:block; height:16px; margin:5px 0px;}
+.toggleq .left{display:block; float:left; width:87px; height:16px; background:url(../images/dock/icons/menu/fold_siderLine.jpg) no-repeat left top;} 
+.toggleq .right{display:block; float:right; width:87px;height:16px;background:url(../images/dock/icons/menu/fold_siderLine_right.jpg) no-repeat right top;} 
+.toggleq span{display:block; margin:0px 80px; height:16px;background:url(../images/dock/icons/menu/fold_Line.jpg) repeat-x left top; text-align:center;}
+.toggleq span em{display:block; width:78px; height:16px;background:url(../images/dock/icons/menu/fold_center.jpg) no-repeat center top; margin:0px auto;}
+.toggleq:hover  span em{background:url(../images/dock/icons/menu/fold_center_hover.jpg) no-repeat center top;}
+.toggleqon  span em{background:url(../images/dock/icons/menu/fold_center2.jpg) no-repeat center top;}
+.toggleqon:hover  span em{background:url(../images/dock/icons/menu/fold_center2_hover.jpg) no-repeat center top;}
+
+.silverbutton,.silverbutton b,.btn2,.btn2 b{font-size:12px; padding:3px 7px 6px 7px; background:url(../images/forms/button/btn2.jpg) no-repeat 0 0;}
+.silverbutton:hover,.silverbutton:hover b,.btn2:hover,.btn2:hover b{background-image:url(../images/forms/button/btn2-hover.jpg);}
+.silverbutton,.btn2{text-decoration:none; color:#000; padding-right:0px;*padding-top:0px; border-width:0px; background-color:transparent;}
+.silverbutton b,.btn2 b{margin-left:7px; background-position:100% 0px; padding-left:0px;padding-right:14px;padding-left:0px;padding-bottom:6px;*padding-top:8px;letter-spacing:1px; color:#0051a1; font-weight:normal;}
+
+/*search button*/
+.btnsearch{width:60px;height:22px; background:url(../images/forms/button/searchBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent; cursor:pointer;}
+.btnsearch:hover{ background:url(../images/forms/button/searchBtnOver.png) no-repeat left top;}
+
+.btnadd{width:60px;height:22px; background:url(../images/forms/button/addBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent; cursor:pointer;}
+.btnadd:hover{ background:url(../images/forms/button/addBtnOver.png) no-repeat left top;}
+
+.btnback{width:60px;height:22px; background:url(../images/forms/button/backBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent; cursor:pointer;}
+.btnback:hover{ background:url(../images/forms/button/backBtnOver.png) no-repeat left top;}
+.btnexport{width:60px;height:22px; background:url(../images/forms/button/saveBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent;cursor:pointer;}
+.btnexport:hover{ background:url(../images/forms/button/saveBtnOver.png) no-repeat left top;}
+.btnexportDetal{width:80px;height:22px; background:url(../images/forms/button/orderDetailBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent;cursor:pointer;}
+.btnexportDetal:hover{ background:url(../images/forms/button/orderDetailBtnOver.png) no-repeat left top;}
+
+
+
+/*custom button*/
+.btncustom{width:60px;height:22px; background:url(../images/forms/button/resetBtnOut.gif) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent; cursor:pointer;color:#D17D10;font-size:12px;}
+.btncustom:hover{ background:url(../images/forms/button/resetBtnOver.gif) no-repeat left top;}
+
+.tbbox{border-top:solid 1px #a7d1f2;}
+.dp{width:90px;}
+a{color:#006699;}
+
+.ui-tabs{padding:0px;}
+.ui-tabs .ui-tabs-nav{padding:0px; margin:4px 5px 0px 5px; padding-left:20px;}
+.ui-tabs .ui-tabs-panel{padding:0px;margin:0px 5px;border:solid 1px #a7d1f2; border-top-width:0px;}
+.ui-tabs .ui-tabs-panel iframe{width:100%;height:100%;}
+.ui-tabs .ui-widget-header{background:url(../images/dock/icons/MainPageTitleBg.jpg) repeat-x left bottom; border-color:#a7d1f2;}
+.ui-tabs .ui-state-default{background:url(../images/dock/icons/mainPageTabOut.jpg) no-repeat left bottom;border-width:0px;}
+.ui-tabs .ui-state-default a {background:url(../images/dock/icons/mainPageTabOut.jpg) no-repeat right bottom;border-width:0px; margin-left:5px;}
+.ui-tabs .ui-state-default:hover{background:url(../images/dock/icons/mainPageTabOver.jpg) no-repeat left bottom;}
+.ui-tabs .ui-state-default:hover a{background:url(../images/dock/icons/mainPageTabOver.jpg) no-repeat right bottom;}
+.ui-tabs .ui-tabs-nav li a{padding-top:7px;padding-bottom:1px; color:#333; font-weight:normal;}
+.ui-tabs .ui-state-active,.ui-tabs .ui-state-active:hover{background:url(../images/dock/icons/mainPageTabDown.jpg) no-repeat left bottom;}
+.ui-tabs .ui-state-active a,.ui-tabs .ui-state-active:hover a{background:url(../images/dock/icons/mainPageTabDown.jpg) no-repeat right bottom;}
+
+#copyrightDiv{position:absolute;font-size:13px;font-family:"\5fae\8f6f\96c5\9ed1","Times New Roman",Tahoma,Helvetica, Arial,sans-serif;color:#555555; text-align:center;}
+
+.table-header{background:url(../images/dock/icons/TableTitleBg2.jpg) repeat-x left bottom;padding:2px;margin-top:3px; }
+.table-header-search p{background:url(../images/dock/icons/menu/icon_2_2.png) no-repeat left center; padding-left:30px;font-weight:bold; font-size:14px; margin:0;color:#E4C64E}
+.table-header-result p{background:url(../images/dock/icons/menu/icon_3_3.png) no-repeat left center; padding-left:30px;font-weight:bold; font-size:14px; margin:0;color:#E4C64E}
+.table-header-msg p{background:url(../images/dock/icons/menu/icon_4_4.png) no-repeat left center; padding-left:30px;font-weight:bold; font-size:14px; margin:0;color:#E4C64E}
+
+.content-right{background-color:#f0f8ff;font-weight:bold;text-align:right;padding-right: 30px;}
+
+.separator {height: 1px;background-color:#5CD65C;margin-top:4px; }
+
+.title-div{ padding-bottom:3px;margin-left:5px; margin-top: 5px;padding-right:5px;}
+
+.btnreset{width:60px;height:22px; background:url(../images/forms/button/resetBtnOut.png) no-repeat left top;margin:0px 2px; border-width:0px; background-color:transparent;cursor:pointer;}
+.btnreset:hover{ background:url(../images/forms/button/resetBtnOver.png) no-repeat left top;}
+ .buttonDiv{position:fixed;z-index:2;background-color:#f0f8ff;}
+ .bottomnav { background-color:#f0f8ff; font-weight:bold;text-align:right;padding-right: 30px;border:0px solid #c0c3c9; bottom:0; left:0;z-index:999;position:fixed; width:100%;  _position:absolute; _top: expression_r(documentelement.scrolltop + documentelement.clientheight-this.offsetheight);overflow:visible; }
+ 

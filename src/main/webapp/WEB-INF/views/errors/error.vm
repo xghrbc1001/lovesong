@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    function showerror(){
+      $("#message").show('fast');
+    }
+</script>
+<style type="text/css">
+	body{padding:0px;margin:0px;background-image: url(#springUrl('/static/images/error/pageBg.jpg'));background-color:#bfe9ff;text-align:center;background-repeat: repeat-x;}
+	#bd{width:473px; height:361px;margin:100px auto 0px auto; text-align:center; position:relative; background-image:url(#springUrl('/static/images/error/center.png'));}
+	#bd .error{font-family:simsun; font-weight:bold; color:red; font-size:24px; position:absolute;width:100%;top:120px;right:0px;left:0px; padding-left:150px;text-align:left;margin:0px;padding-top:0px;padding-bottom:0px;}
+	#bd .btnback{position:absolute; left:60%; top:210px; margin-left:-76px;   width:111px;height:26px; background-image:url(#springUrl('/static/images/error/btn_out.png'));}
+	#bd .btnback:hover{background-image:url(#springUrl('/static/images/error/btn_over.png'));}
+</style>
+<div class="page-error">
+    <div id="bd">
+        <h3 class="error">
+            #if($exception)
+                $!exception.printStackTrace()
+                #if($!exception.class.simpleName=="NoSuchMethodException")
+                    $!response.setStatus(404)
+                    404! 您请求的内容不存在
+                #elseif($!exception.message)
+                    系统错误：
+##                    <a href="javascript:showerror();" style="color:red;font-size:13px;">查看详细信息</a>
+                    <div id="message" style="color:red;font-size:16px; margin:0 0 0 60px;">$!exception.message</div>
+                #else
+                    系统错误：
+##                    <a href="javascript:showerror();" style="color:red;font-size:13px;">查看详细信息</a>
+                    <div id="message" style="color:red;font-size:16px; margin:0 0 0 60px;">$!exception.message</div>
+                #end
+
+            #else
+                #showSimpleError()
+            #end
+        </h3>
+        <a href="mailto:$!adminMail" class="btnback"></a>
+    </div>
+</div>
+	

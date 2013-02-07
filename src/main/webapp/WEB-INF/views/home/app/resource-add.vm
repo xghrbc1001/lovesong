@@ -1,0 +1,94 @@
+#set($title = "添加TREE信息")
+#set($layout = "/layout/content.vm")
+
+<script type="text/javascript">
+    var fjConfig = {
+        rootPath: "#springUrl('')/static/js/fj/",
+        themeStoreName: "fj_theme",
+        ver: "20120730" + new Date().getTime()//,
+        //initTheme: "gray"
+    };
+</script>
+<script type="text/javascript" src="#springUrl('')/static/js/fj/pkgs/fj.all.min.js" ></script>
+
+
+<script type="text/javascript" src="#springUrl('')/themes/shamrock/javascript/business/home/app/resourceAdd.js" ></script>
+
+<form action="" method="get" id="myfrom">
+<div style="position:absolute;top:10px;left:30px">
+     <table cellpadding="4px" style="font-size:12px">
+          <tr>
+              <td style="text-align:right">资源名称：</td>
+              <td>
+                  <input type="text" id="resName" name="resourceName" style="width:80px"/>
+              </td>
+              <td style="text-align:right">资源码：</td>
+              <td>
+                 <input type="text" id="resCode"  name="resourceCode"  style="width:80px"/> <font color="red"  style="display:none" id="showIsUsed">已使用</font>
+              </td>
+			  <td style="text-align:right">资源描述：</td>
+              <td>
+                 <input type="text"  name="comments"  style="width:80px"/>
+              </td>
+          </tr>
+
+          <tr>
+              <td style="text-align:right">父资源名称：</td>
+              <td>
+                  <input type="text" value="$!resource.parentResName" readonly="readonly" disabled="disabled"  style="width:80px"/>
+                  <input type="hidden" value="$!resource.parentResId" name="parentResId" readonly="readonly"  style="width:80px"/>
+              </td>
+              <td style="text-align:right">资源排序号：</td>
+              <td>
+                  <input type="text"   name="levelNum"  style="width:80px"/>
+              </td>
+              <td style="text-align:right">资源Style：</td>
+              <td>
+                  <input type="text"  name="style"   style="width:80px"/>
+              </td>
+          </tr>
+           <tr>
+              <td style="text-align:right">资源Target：</td>
+              <td>
+                   <select style="width: 80px;" name="target">
+                      <option value="">请选择</option>
+                      <option value="_blank">_blank</option>
+                      <option value="_parent">_parent</option>
+                      <option value="_self">_self  </option>
+                      <option value="_top">_top   </option>
+                      <option value="_search">_search</option>
+                      <option value="mainframe">mainframe</option>
+                  </select>
+              </td>
+              <td style="text-align:right">资源类型：</td>
+              <td>
+                  <select style="width: 80px;" id="resType" name="resourceType">
+                      <option value="">请选择</option>
+                      <option value="1">菜单</option>
+                      <option value="2">功能</option>
+                  </select>
+              </td>
+              <td style="text-align:right">资源别名：</td>
+              <td>
+                  <input type="text" name="aliases"  style="width:80px"/>
+              </td>
+          </tr>
+         <tr>
+
+              <td style="text-align:right">资源URL：</td>
+              <td colspan="5">
+                  <input type="text" id="url" name="resourceURL"  style="width:350px"/>
+                  <input type="hidden"  name="levelNum" value="$!resource.level"  style="width:80px"/>
+                  <input type="hidden" name="uniId" value="$!resource.uuid" style="width:80px"/>
+              </td>
+          </tr>
+     </table>
+     <table style="margin-left:230px;margin-top:10px"cellpadding="20px" >
+        <tr>
+            <td><input class="btncustom" type="button" value="保 存" id="save"/></td>
+        </tr>
+     </table>
+</div>
+</form>
+
+
