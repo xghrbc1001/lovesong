@@ -13,6 +13,6 @@ target/
 .settings
 
 # security files #
-*.properties
+#*.properties
 
 
